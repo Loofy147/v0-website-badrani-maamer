@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`font-sans antialiased`}>
+      <body className={`${_geist.className} ${_geistMono.variable} font-sans antialiased`}>
         <LanguageProvider>
           <div className="flex min-h-screen flex-col">
             <Navbar />
