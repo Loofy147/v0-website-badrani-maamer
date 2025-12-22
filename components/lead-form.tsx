@@ -1,14 +1,16 @@
 "use client"
 
-import type React from "react"
-
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import * as z from "zod"
 import { useState } from "react"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { useLanguage } from "@/lib/language-context"
 import { createClient } from "@/lib/supabase/client"
 import { Alert, AlertDescription } from "@/components/ui/alert"
@@ -20,22 +22,33 @@ interface LeadFormProps {
   leadType?: Lead["lead_type"]
 }
 
+// Zod Schema for validation with specific messages
+const leadFormSchema = z.object({
+  full_name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  phone: z.string().regex(/^(?:\+213|0)(?:5|6|7)\d{8}$/, { message: "Please enter a valid Algerian phone number (e.g., 05/06/07... or +213...)." }),
+  preferred_contact: z.enum(["phone", "email", "whatsapp"]),
+  message: z.string().optional(),
+})
+
 export function LeadForm({ propertyId, leadType = "general" }: LeadFormProps) {
   const { t, language } = useLanguage()
   const [isLoading, setIsLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const [formData, setFormData] = useState({
-    full_name: "",
-    email: "",
-    phone: "",
-    message: "",
-    preferred_contact: "phone" as Lead["preferred_contact"],
+  const form = useForm<z.infer<typeof leadFormSchema>>({
+    resolver: zodResolver(leadFormSchema),
+    defaultValues: {
+      full_name: "",
+      email: "",
+      phone: "",
+      preferred_contact: "phone",
+      message: "",
+    },
   })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const onSubmit = async (values: z.infer<typeof leadFormSchema>) => {
     setIsLoading(true)
     setError(null)
     setSuccess(false)
@@ -47,7 +60,7 @@ export function LeadForm({ propertyId, leadType = "general" }: LeadFormProps) {
       } = await supabase.auth.getUser()
 
       const leadData: Partial<Lead> = {
-        ...formData,
+        ...values,
         lead_type: leadType,
         property_id: propertyId,
         user_id: user?.id,
@@ -59,13 +72,7 @@ export function LeadForm({ propertyId, leadType = "general" }: LeadFormProps) {
       if (insertError) throw insertError
 
       setSuccess(true)
-      setFormData({
-        full_name: "",
-        email: "",
-        phone: "",
-        message: "",
-        preferred_contact: "phone",
-      })
+      form.reset() // Reset form on success
 
       setTimeout(() => setSuccess(false), 5000)
     } catch (err) {
@@ -86,95 +93,114 @@ export function LeadForm({ propertyId, leadType = "general" }: LeadFormProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="full_name">{t("contact.name")}</Label>
-            <Input
-              id="full_name"
-              required
-              value={formData.full_name}
-              onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="full_name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("contact.name")}</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="email">{t("contact.email")}</Label>
-            <Input
-              id="email"
-              type="email"
-              required
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("contact.email")}</FormLabel>
+                  <FormControl>
+                    <Input type="email" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="phone">{t("contact.phone")}</Label>
-            <Input
-              id="phone"
-              type="tel"
-              required
-              placeholder="+213"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("contact.phone")}</FormLabel>
+                  <FormControl>
+                    <Input type="tel" placeholder="+213" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="preferred_contact">
-              {language === "ar" ? "طريقة الاتصال المفضلة" : "Méthode de contact préférée"}
-            </Label>
-            <Select
-              value={formData.preferred_contact}
-              onValueChange={(value) =>
-                setFormData({ ...formData, preferred_contact: value as Lead["preferred_contact"] })
-              }
-            >
-              <SelectTrigger>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="phone">{language === "ar" ? "هاتف" : "Téléphone"}</SelectItem>
-                <SelectItem value="email">{language === "ar" ? "بريد إلكتروني" : "Email"}</SelectItem>
-                <SelectItem value="whatsapp">WhatsApp</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="message">{t("contact.message")}</Label>
-            <Textarea
-              id="message"
-              rows={4}
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            <FormField
+              control={form.control}
+              name="preferred_contact"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>
+                    {language === "ar" ? "طريقة الاتصال المفضلة" : "Méthode de contact préférée"}
+                  </FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="phone">{language === "ar" ? "هاتف" : "Téléphone"}</SelectItem>
+                      <SelectItem value="email">{language === "ar" ? "بريد إلكتروني" : "Email"}</SelectItem>
+                      <SelectItem value="whatsapp">WhatsApp</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          {error && (
-            <Alert variant="destructive">
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
-          )}
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t("contact.message")}</FormLabel>
+                  <FormControl>
+                    <Textarea rows={4} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          {success && (
-            <Alert>
-              <CheckCircle2 className="h-4 w-4" />
-              <AlertDescription>{t("contact.success")}</AlertDescription>
-            </Alert>
-          )}
-
-          <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                {language === "ar" ? "جاري الإرسال..." : "Envoi en cours..."}
-              </>
-            ) : (
-              t("contact.submit")
+            {error && (
+              <Alert variant="destructive">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
             )}
-          </Button>
-        </form>
+
+            {success && (
+              <Alert>
+                <CheckCircle2 className="h-4 w-4" />
+                <AlertDescription>{t("contact.success")}</AlertDescription>
+              </Alert>
+            )}
+
+            <Button type="submit" className="w-full" disabled={isLoading}>
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  {language === "ar" ? "جاري الإرسال..." : "Envoi en cours..."}
+                </>
+              ) : (
+                t("contact.submit")
+              )}
+            </Button>
+          </form>
+        </Form>
       </CardContent>
     </Card>
   )
