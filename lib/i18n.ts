@@ -5,6 +5,8 @@ export const translations = {
     nav: {
       home: "Accueil",
       properties: "Propriétés",
+      gallery: "Galerie",
+      services: "Services",
       financing: "Financement",
       about: "À Propos",
       contact: "Contact",
@@ -73,6 +75,8 @@ export const translations = {
     nav: {
       home: "الرئيسية",
       properties: "العقارات",
+      gallery: "المعرض",
+      services: "الخدمات",
       financing: "التمويل",
       about: "من نحن",
       contact: "اتصل بنا",

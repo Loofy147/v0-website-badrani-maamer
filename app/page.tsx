@@ -21,7 +21,7 @@ export default async function HomePage() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920)",
+            backgroundImage: "url(https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80)",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -31,22 +31,35 @@ export default async function HomePage() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl space-y-6">
+            <div className="inline-block mb-2 px-4 py-2 bg-primary/10 rounded-full">
+              <p className="text-sm font-medium text-primary">Promotion Badrani Maamar - Aïn Defla</p>
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-balance">
-              Réalisez Votre Rêve Immobilier
+              Sکنات ترقوية و محلات تجارية للبيع
             </h1>
             <p className="text-xl text-muted-foreground text-pretty">
-              Trouvez votre propriété idéale à Blida avec des options de financement flexibles adaptées à vos besoins
+              Projet de 21 logements à Rouina + Locaux commerciaux sur RN4. Financement bancaire ou paiement échelonné
+              sur 40 mois disponible
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="gap-2">
                 <Link href="/properties">
-                  Découvrir les Propriétés
+                  Découvrir Nos Biens
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/financing">Options de Financement</Link>
+                <Link href="/financing">Financement sur 40 Mois</Link>
               </Button>
+            </div>
+            <div className="flex flex-wrap gap-4 text-sm">
+              <a href="tel:+213770621824" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+                📞 0770 62 18 24
+              </a>
+              <a href="tel:+213550032741" className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+                📞 0550 03 27 41
+              </a>
+              <span className="text-muted-foreground">Fax: 027 50 30 30</span>
             </div>
           </div>
         </div>
@@ -86,7 +99,7 @@ export default async function HomePage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Pourquoi Nous Choisir</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Pourquoi Promotion Badrani Maamar</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -94,32 +107,74 @@ export default async function HomePage() {
               <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                 <Building2 className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="font-semibold text-xl">Expérience Prouvée</h3>
-              <p className="text-muted-foreground text-sm">Plus de 15 ans d'excellence dans l'immobilier à Blida</p>
+              <h3 className="font-semibold text-xl">Projets Réels</h3>
+              <p className="text-muted-foreground text-sm">21 logements promotionnels à Rouina + Locaux sur RN4</p>
             </div>
 
             <div className="text-center space-y-4">
               <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                 <Shield className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="font-semibold text-xl">Confiance & Transparence</h3>
-              <p className="text-muted-foreground text-sm">Transactions sécurisées avec documentation complète</p>
+              <h3 className="font-semibold text-xl">Bureau sur Site</h3>
+              <p className="text-muted-foreground text-sm">Visitez notre bureau à Rouina pour voir les appartements</p>
             </div>
 
             <div className="text-center space-y-4">
               <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                 <TrendingUp className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="font-semibold text-xl">Financement Flexible</h3>
-              <p className="text-muted-foreground text-sm">Options de paiement adaptées à tous les budgets</p>
+              <h3 className="font-semibold text-xl">Paiement sur 40 Mois</h3>
+              <p className="text-muted-foreground text-sm">Options flexibles sans banque avec le promoteur</p>
             </div>
 
             <div className="text-center space-y-4">
               <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
                 <Users className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="font-semibold text-xl">Support Dédié</h3>
-              <p className="text-muted-foreground text-sm">Accompagnement personnalisé à chaque étape</p>
+              <h3 className="font-semibold text-xl">8K+ Abonnés</h3>
+              <p className="text-muted-foreground text-sm">Communauté active sur les réseaux sociaux</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Notre Projet à Rouina</h2>
+              <p className="text-muted-foreground mb-6">
+                Découvrez notre projet de 21 logements promotionnels dans la commune de Rouina, wilaya d'Aïn Defla.
+                Appartements F3 et F4 avec finitions modernes dans un quartier résidentiel calme.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Bureau de vente sur site ouvert tous les jours</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Visites possibles sans rendez-vous</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Financement bancaire ou paiement direct arrangé</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Livraison sous 6 mois</span>
+                </li>
+              </ul>
+              <Button asChild className="mt-6">
+                <Link href="/properties?location=rouina">Voir les Appartements Rouina</Link>
+              </Button>
+            </div>
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80"
+                alt="Projet Rouina"
+                className="object-cover w-full h-full"
+              />
             </div>
           </div>
         </div>

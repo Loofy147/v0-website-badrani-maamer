@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Building2, Users, Award, TrendingUp, Shield, CheckCircle2 } from "lucide-react"
+import { Building2, Users, Award, TrendingUp, Shield, CheckCircle2, Presentation } from "lucide-react"
 import Image from "next/image"
 
 export default function AboutPage() {
@@ -9,7 +9,7 @@ export default function AboutPage() {
         <div className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold">À Propos de Nous</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Promotion Badrani Maamar, votre partenaire de confiance dans l'immobilier à Blida depuis plus de 15 ans
+            Promotion Badrani Maamar, votre partenaire de confiance dans l'immobilier à Ain Defla depuis plus de 15 ans
           </p>
         </div>
 
@@ -51,8 +51,8 @@ export default function AboutPage() {
               <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 mb-3">
                 <Users className="h-6 w-6 text-primary" />
               </div>
-              <p className="text-3xl font-bold">1500+</p>
-              <p className="text-sm text-muted-foreground">Clients Satisfaits</p>
+              <p className="text-3xl font-bold">8000+</p>
+              <p className="text-sm text-muted-foreground">Abonnés Facebook</p>
             </CardContent>
           </Card>
 
@@ -75,6 +75,48 @@ export default function AboutPage() {
               <p className="text-sm text-muted-foreground">Taux de Satisfaction</p>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary">
+              <Presentation className="h-6 w-6 text-primary-foreground" />
+            </div>
+            <h2 className="text-3xl font-bold">BAB AL-EMAAR</h2>
+          </div>
+          <p className="text-lg text-muted-foreground">
+            Découvrez notre salle de conférences et de réunions moderne, idéale pour vos événements professionnels.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary mt-1 shrink-0" />
+              <div>
+                <p className="font-semibold">Formations et Séminaires</p>
+                <p className="text-sm text-muted-foreground">Espace équipé pour vos sessions de formation</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary mt-1 shrink-0" />
+              <div>
+                <p className="font-semibold">Réunions d'Entreprise</p>
+                <p className="text-sm text-muted-foreground">Salles adaptées pour vos réunions professionnelles</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary mt-1 shrink-0" />
+              <div>
+                <p className="font-semibold">Conférences</p>
+                <p className="text-sm text-muted-foreground">Équipements audiovisuels de qualité</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle2 className="h-5 w-5 text-primary mt-1 shrink-0" />
+              <div>
+                <p className="font-semibold">Événements Corporate</p>
+                <p className="text-sm text-muted-foreground">Location flexible pour vos événements</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="space-y-6">

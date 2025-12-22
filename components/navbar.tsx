@@ -46,6 +46,12 @@ export function Navbar() {
             <Link href="/properties" className="text-sm font-medium hover:text-primary transition-colors">
               {t("nav.properties")}
             </Link>
+            <Link href="/gallery" className="text-sm font-medium hover:text-primary transition-colors">
+              {t("nav.gallery")}
+            </Link>
+            <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">
+              {t("nav.services")}
+            </Link>
             <Link href="/financing" className="text-sm font-medium hover:text-primary transition-colors">
               {t("nav.financing")}
             </Link>
@@ -94,6 +100,20 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.properties")}
+            </Link>
+            <Link
+              href="/gallery"
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("nav.gallery")}
+            </Link>
+            <Link
+              href="/services"
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("nav.services")}
             </Link>
             <Link
               href="/financing"

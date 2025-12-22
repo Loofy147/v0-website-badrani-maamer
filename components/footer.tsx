@@ -50,7 +50,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>+213 25 43 21 00</span>
+                <span>+213 770 62 18 24</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
@@ -58,7 +58,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>Blida, {language === "fr" ? "Algérie" : "الجزائر"}</span>
+                <span>Ain Defla, {language === "fr" ? "Algérie" : "الجزائر"}</span>
               </li>
             </ul>
           </div>
@@ -66,10 +66,16 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">{t("footer.followUs")}</h3>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-primary transition-colors">
+              <a
+                href="https://www.facebook.com/profile.php?id=100063585837831"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+                aria-label="Facebook"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="#" className="hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
