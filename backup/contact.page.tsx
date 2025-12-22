@@ -1,15 +1,8 @@
 import { LeadForm } from "@/components/lead-form"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, Clock, Fan as Fax, MessageCircle } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Fan as Fax } from "lucide-react"
 
 export default function ContactPage() {
-  const whatsappNumbers = [
-    { number: "213770621824", display: "+213 770 62 18 24" },
-    { number: "213550032741", display: "+213 550 03 27 41" },
-    { number: "213550029750", display: "+213 550 02 97 50" },
-  ]
-
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-5xl mx-auto space-y-8">
@@ -19,43 +12,6 @@ export default function ContactPage() {
             Notre équipe est à votre disposition pour répondre à toutes vos questions
           </p>
         </div>
-
-        {/* WhatsApp Quick Contact Section */}
-        <Card className="bg-gradient-to-br from-green-500/10 to-green-600/5 border-green-200">
-          <CardContent className="p-6">
-            <div className="flex flex-col items-center gap-4 text-center">
-              <div className="p-3 rounded-full bg-green-500/10">
-                <MessageCircle className="h-8 w-8 text-green-600" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">Contactez-nous sur WhatsApp</h3>
-                <p className="text-muted-foreground mb-4">
-                  Pour une réponse rapide, contactez-nous directement via WhatsApp
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-3 justify-center">
-                {whatsappNumbers.map((contact) => (
-                  <Button
-                    key={contact.number}
-                    asChild
-                    size="lg"
-                    className="bg-green-600 hover:bg-green-700 text-white"
-                  >
-                    <a
-                      href={`https://wa.me/${contact.number}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <MessageCircle className="h-5 w-5" />
-                      {contact.display}
-                    </a>
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-6">
@@ -71,20 +27,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Téléphone</h3>
-                    <div className="space-y-1">
-                      <a href="tel:+213275031331" className="text-muted-foreground hover:text-primary block">
-                        +213 27 50 31 31 (Bureau Principal)
-                      </a>
-                      <a href="tel:+213770621824" className="text-muted-foreground hover:text-primary block">
-                        +213 770 62 18 24
-                      </a>
-                      <a href="tel:+213550032741" className="text-muted-foreground hover:text-primary block">
-                        +213 550 03 27 41
-                      </a>
-                      <a href="tel:+213550029750" className="text-muted-foreground hover:text-primary block">
-                        +213 550 02 97 50
-                      </a>
-                    </div>
+                    <a href="tel:+213770621824" className="text-muted-foreground hover:text-primary block">
+                      +213 770 62 18 24
+                    </a>
+                    <a href="tel:+213550032741" className="text-muted-foreground hover:text-primary block">
+                      +213 550 03 27 41
+                    </a>
                   </div>
                 </div>
 
@@ -115,9 +63,9 @@ export default function ContactPage() {
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Bureau Principal</h3>
-                    <p className="text-muted-foreground">Hay Mohamed Nadjem</p>
-                    <p className="text-muted-foreground">Escadron Ain Defla</p>
+                    <h3 className="font-semibold mb-1">Siège Social</h3>
+                    <p className="text-muted-foreground">Cité 234 logts Hotel Doui</p>
+                    <p className="text-muted-foreground">Commune de Aïn Defla</p>
                     <p className="text-muted-foreground">Wilaya de Aïn Defla, Algérie</p>
                   </div>
                 </div>
@@ -129,12 +77,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold mb-1">Bureau de Vente - Projet Rouina</h3>
                     <p className="text-muted-foreground">Sur site du projet</p>
-                    <p className="text-muted-foreground">Commune de Rouina, Wilaya de Aïn Defla</p>
-                    <p className="text-muted-foreground">Mقابل عيادة متعددة الخدمات</p>
+                    <p className="text-muted-foreground">Commune de Rouina</p>
                     <p className="text-muted-foreground">Wilaya de Aïn Defla</p>
-                    <p className="text-xs text-primary mt-1 font-medium">
-                      ✅ Ouvert tous les jours pour visites sans rendez-vous
-                    </p>
+                    <p className="text-xs text-primary mt-1">Ouvert tous les jours pour visites</p>
                   </div>
                 </div>
 
@@ -146,9 +91,6 @@ export default function ContactPage() {
                     <h3 className="font-semibold mb-1">Horaires</h3>
                     <p className="text-muted-foreground">Samedi - Jeudi: 8h00 - 17h00</p>
                     <p className="text-muted-foreground">Vendredi: Fermé</p>
-                    <p className="text-sm text-primary mt-1">
-                      📍 Bureau Rouina: Visites possibles tous les jours
-                    </p>
                   </div>
                 </div>
               </CardContent>
