@@ -78,6 +78,65 @@ export const translations = {
       followUs: "Suivez-Nous",
       rights: "Tous droits réservés",
     },
+    home: {
+      hero: {
+        tagline: "Promotion Immobilière Badrani Maamar",
+        title: "21 Logements Promotionnels à Vendre à Rouina",
+        subtitle: "Avec possibilité de crédit bancaire direct",
+        description: "Appartements F3 & F4 avec finitions modernes • Financement bancaire garanti • Bureau de vente sur site",
+        ctaProperties: "Découvrir Nos Biens",
+        ctaFinancing: "Financement Bancaire",
+      },
+      financing: {
+        tagline: "Possibilité de Financement Bancaire Garanti",
+        title: "Nous traitons directement avec les banques pour faciliter votre crédit",
+        subtitle: "Nous vous accompagnons dans toutes les démarches bancaires de A à Z",
+        card1Title: "Relation Directe avec les Banques",
+        card1Desc: "Nous collaborons avec toutes les banques algériennes pour garantir les meilleures conditions de financement",
+        card2Title: "Accompagnement Complet",
+        card2Desc: "Nous vous aidons à préparer votre dossier et à finaliser toutes les procédures bancaires",
+        card3Title: "Financement Flexible",
+        card3Desc: "Plusieurs options : classique, islamique, ou paiement direct sur 40 mois",
+        partnerBanks: "🏦 Banques partenaires : BNA • CPA • Al Baraka • Al Salam • CNEP",
+        partnerBanksDesc: "Nous vous garantissons les meilleures conditions de financement grâce à nos partenariats directs",
+        cta: "Calculez Votre Financement",
+      },
+      featuredProperties: {
+        title: "Propriétés en Vedette",
+        subtitle: "21 logements promotionnels à Rouina - Appartements F3 & F4",
+        viewAll: "Voir Toutes les Propriétés",
+        noneAvailable: "Aucune propriété disponible pour le moment",
+      },
+      whyChooseUs: {
+        title: "Pourquoi Choisir la Promotion Badrani Maamar",
+        feature1Title: "Projet Réel",
+        feature1Desc: "21 logements promotionnels en cours de construction à Rouina",
+        feature2Title: "Financement Bancaire Direct",
+        feature2Desc: "Nous travaillons directement avec les banques pour faciliter le crédit",
+        feature3Title: "Bureau sur Site",
+        feature3Desc: "Visitez le projet et les appartements à tout moment",
+        feature4Title: "8K+ Followers",
+        feature4Desc: "Une communauté active sur Facebook",
+      },
+      rouinaProject: {
+        tagline: "Projet 21 Logements Promotionnels",
+        title: "Notre Projet à Rouina",
+        description: "Découvrez notre projet de 21 logements promotionnels dans la commune de Rouina, wilaya de Ain Defla. Appartements F3 et F4 avec finitions modernes dans un quartier résidentiel calme.",
+        listItem1: "Bureau de vente sur site ouvert tous les jours",
+        listItem2: "Visites possibles sans rendez-vous",
+        listItem3: "Financement bancaire direct ou paiement échelonné sur 40 mois",
+        listItem4: "Livraison dans 6 mois",
+        location: "Emplacement : En face de la polyclinique - Rouina",
+        ctaView: "Voir les appartements de Rouina",
+        ctaVisit: "Visiter notre bureau sur site",
+      },
+      cta: {
+        title: "Prêt à commencer votre parcours immobilier ?",
+        subtitle: "Contactez-nous aujourd'hui et laissez nos experts vous guider vers la propriété idéale avec un financement bancaire garanti",
+        contactUs: "Contactez-nous maintenant",
+        whatsapp: "WhatsApp:",
+      },
+    },
   },
   ar: {
     nav: {
@@ -156,16 +215,80 @@ export const translations = {
       followUs: "تابعنا",
       rights: "جميع الحقوق محفوظة",
     },
+    home: {
+      hero: {
+        tagline: "مؤسسة الترقية العقارية بدراني معمر",
+        title: "21 مسكن ترقوي للبيع بالروينة",
+        subtitle: "مع إمكانية القرض البنكي المباشر",
+        description: "شقق F3 و F4 بتشطيبات عصرية • تمويل بنكي مضمون • مكتب مبيعات في الموقع",
+        ctaProperties: "اكتشف عقاراتنا",
+        ctaFinancing: "التمويل البنكي",
+      },
+      financing: {
+        tagline: "إمكانية القرض البنكي المضمون",
+        title: "نتعامل مباشرة مع البنوك لتسهيل حصولك على القرض",
+        subtitle: "نرافقك في جميع الإجراءات البنكية من الألف إلى الياء",
+        card1Title: "تعامل مباشر مع البنوك",
+        card1Desc: "نعمل مع جميع البنوك الجزائرية لضمان أفضل شروط التمويل",
+        card2Title: "مرافقة كاملة",
+        card2Desc: "نساعدك في تحضير الملف وإتمام جميع الإجراءات البنكية",
+        card3Title: "تمويل مرن",
+        card3Desc: "خيارات تمويل متعددة: كلاسيكي، إسلامي، أو دفع مباشر على 40 شهر",
+        partnerBanks: "🏦 البنوك الشريكة: BNA • CPA • البركة • السلام • CNEP",
+        partnerBanksDesc: "نضمن لك الحصول على أفضل شروط التمويل من خلال شراكتنا المباشرة مع البنوك",
+        cta: "احسب التمويل الخاص بك",
+      },
+      featuredProperties: {
+        title: "العقارات المميزة",
+        subtitle: "21 مسكن ترقوي بالروينة - شقق F3 و F4",
+        viewAll: "شاهد كل العقارات",
+        noneAvailable: "لا توجد عقارات متاحة في الوقت الحالي",
+      },
+      whyChooseUs: {
+        title: "لماذا مؤسسة بدراني معمر",
+        feature1Title: "مشروع حقيقي",
+        feature1Desc: "21 مسكن ترقوي في الروينة قيد الإنجاز",
+        feature2Title: "تمويل بنكي مباشر",
+        feature2Desc: "نعمل مباشرة مع البنوك لتسهيل القرض",
+        feature3Title: "مكتب في الموقع",
+        feature3Desc: "زر المشروع وتفقد الشقق في أي وقت",
+        feature4Title: "8K+ متابع",
+        feature4Desc: "مجتمع نشط على الفيسبوك",
+      },
+      rouinaProject: {
+        tagline: "مشروع 21 مسكن ترقوي",
+        title: "مشروعنا في الروينة",
+        description: "اكتشف مشروعنا المكون من 21 مسكن ترقوي في بلدية الروينة، ولاية عين الدفلى. شقق F3 و F4 بتشطيبات عصرية في حي سكني هادئ.",
+        listItem1: "مكتب مبيعات في الموقع مفتوح كل يوم",
+        listItem2: "زيارات ممكنة بدون موعد مسبق",
+        listItem3: "تمويل بنكي مباشر أو دفع مقسط على 40 شهر",
+        listItem4: "التسليم خلال 6 أشهر",
+        location: "الموقع: مقابل عيادة متعددة الخدمات - الروينة",
+        ctaView: "شاهد شقق الروينة",
+        ctaVisit: "زر مكتبنا في الموقع",
+      },
+      cta: {
+        title: "جاهز لبدء رحلتك العقارية؟",
+        subtitle: "تواصل معنا اليوم ودع خبراءنا يرشدونك نحو العقار المثالي مع تمويل بنكي مضمون",
+        contactUs: "اتصل بنا الآن",
+        whatsapp: "واتساب:",
+      },
+    },
   },
 }
 
 export function getTranslation(lang: Language, key: string): string {
   const keys = key.split(".")
-  let value: Record<string, unknown> = translations[lang]
+  let value: any = translations[lang]
 
   for (const k of keys) {
-    value = value?.[k]
+    if (value && typeof value === "object" && k in value) {
+      value = value[k]
+    } else {
+      // Path doesn't exist or we've hit a leaf node prematurely
+      return key
+    }
   }
 
-  return value || key
+  return typeof value === "string" ? value : key
 }
