@@ -84,13 +84,13 @@ export default async function HomePage() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="gap-2">
+              <Button asChild size="lg" className="gap-2" data-va-track="true" data-va-track-name="Hero CTA Click - Discover Properties">
                 <Link href="/properties">
                   Découvrir Nos Biens
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" data-va-track="true" data-va-track-name="Hero CTA Click - Bank Financing">
                 <Link href="/financing">
                   <Landmark className="h-4 w-4 mr-2" />
                   Financement Bancaire
