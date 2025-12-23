@@ -6,6 +6,7 @@ import "./globals.css"
 import { LanguageProvider } from "@/lib/language-context"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { FloatingWhatsAppButton } from "@/components/whatsapp-button"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -50,6 +51,7 @@ export default function RootLayout({
           </div>
         </LanguageProvider>
         <Analytics />
+        <FloatingWhatsAppButton phoneNumber="213770621824" />
       </body>
     </html>
   )
