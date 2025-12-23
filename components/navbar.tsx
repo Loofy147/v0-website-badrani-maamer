@@ -8,12 +8,11 @@ import { Button } from "./ui/button"
 import { Building2, Menu, User } from "lucide-react"
 import { useState, useEffect } from "react"
 import { createClient } from "@/lib/supabase/client"
-import type { User } from "@supabase/supabase-js"
 
 export function Navbar() {
   const { t } = useLanguage()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useState<any>(null)
 
   useEffect(() => {
     const supabase = createClient()

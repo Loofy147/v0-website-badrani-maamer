@@ -183,4 +183,4 @@ INSERT INTO public.leads (property_id, full_name, email, phone, message, status,
 VALUES
 (1, 'Ahmed Benali', '[email protected]', '0770621824', 'Je suis intéressé par cet appartement F3. Pouvez-vous me donner plus de détails sur les options de financement?', 'new', 'buyer', '7000000-8000000', TRUE, 'website'),
 (4, 'Fatima Khelifi', '[email protected]', '0550032741', 'Appartement F4 très intéressant. Je voudrais planifier une visite ce weekend si possible.', 'contacted', 'buyer', '9000000-10000000', TRUE, 'website'),
-(5, 'Karim Mansouri', '[email protected]', '0661234567', 'Intressé par le local commercial. Quel est le délai de livraison?', 'new', 'investor', '12000000+', FALSE, 'phone');
+(5, 'Karim Mansouri', '[email protected]', '0661234567', 'Intéressé par le local commercial. Quel est le délai de livraison?', 'new', 'investor', '12000000+', FALSE, 'phone');

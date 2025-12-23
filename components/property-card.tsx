@@ -83,7 +83,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
       </CardContent>
 
       <CardFooter className="p-4 pt-0">
-        <Button asChild className="w-full bg-transparent" variant="outline" data-va-track="true" data-va-track-name={`Property Card Click - ${property.title_fr}`}>
+        <Button asChild className="w-full bg-transparent" variant="outline">
           <Link href={`/properties/${property.id}`}>
             <Eye className="h-4 w-4 mr-2" />
             {t("properties.viewDetails")}
